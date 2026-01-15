@@ -1,4 +1,4 @@
-const CACHE_NAME = "iq-run-v1";
+const CACHE_NAME = "iq-run-v2";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
