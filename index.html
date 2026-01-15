@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ffffff">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="icon-192.png">
-      
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
+    <title>IQ Run</title>
+
+    <!-- ✅ PWA manifest (GitHub Pages absolute path) -->
+    <link rel="manifest" href="/IQ-Run/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- ✅ iOS PWA settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="IQ Run" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" href="/IQ-Run/icon-192.png" />
+
+    <!-- ✅ Use LOCAL p5 files (better for offline + school WiFi) -->
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
-    <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./service-worker.js");
-  }
-</script>
 
+  <body>
+    <main></main>
+
+    <script src="sketch.js"></script>
+
+    <!-- ✅ Service worker (Android + supported browsers) -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/IQ-Run/service-worker.js", {
+          scope: "/IQ-Run/",
+        });
+      }
+    </script>
   </body>
 </html>
